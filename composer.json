@@ -1,0 +1,29 @@
+{
+    "name": "flyke/laravel-template-hints",
+    "description": "Show the paths to current blade template files in html source for finding the correct template",
+    "keywords": ["flyke", "laravel", "blade", "template", "hints", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joery Lemmens",
+            "email": "info@digity.be",
+            "homepage": "https://www.digity.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+    	"php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flyke\\TemplateHints\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Flyke\\TemplateHints\\TemplateHintsServiceProvider"
+            ]
+        }
+    }
+}
