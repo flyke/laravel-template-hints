@@ -30,7 +30,7 @@ class TemplateHints
     public function __construct()
     {
         $this->files = File::allFiles(base_path().(config('templatehints.path', '/storage/framework/views')));
-        $this->realPath = '<!-- Template file: <?php echo str_replace("'.base_path().'", "", last($this->lastCompiled)) ?>';
+        $this->realPath = '<!-- Template file: <?php echo str_replace("'.base_path().'", "", last($this->lastCompiled)) ?> -->';
         $this->debug = config('templatehints.trace');
     }
 
@@ -54,7 +54,6 @@ class TemplateHints
         // If the file does not contain the trace, add it.
         if (strpos(File::get($file), $this->realPath) === false && $this->debug == true) {
             File::prepend($file, $this->realPath);
-            File::append($file, ' -->');
         }
     }
 
