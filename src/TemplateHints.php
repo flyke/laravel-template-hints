@@ -31,6 +31,7 @@ class TemplateHints
     {
         $this->files = File::allFiles(base_path().(config('templatehints.path', '/storage/framework/views')));
         $this->realPath = '<!-- Template file: <?php echo str_replace("'.base_path().'", "", last($this->lastCompiled)) ?> -->';
+        $this->realPath .= "\n";
         $this->debug = config('templatehints.trace');
     }
 
